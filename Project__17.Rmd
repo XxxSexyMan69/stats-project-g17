@@ -1,11 +1,9 @@
 ---
-title: "project"
+title: "Project_17"
+author: "Nathaniel Church"
+date: "4/12/2019"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ```{r}
 Mydata = read.csv("combined.sample_17.csv")
@@ -14,19 +12,30 @@ Mydata = read.csv("combined.sample_17.csv")
 
 1. Introduction
 
+We will take our null hypothesis as being that the mean AADT in 2008 is equal to the mean AADT in 2014.
+H0:U2008=U_2014
+Using data from the Kentucky State Police Traffic Facts for years 2008 and 2014, our alternative hypothesis is that the mean AADT in 2008 is less than the mean AADT in 2014.
+H1:U2008 < U2014
+
+The Null Hypotheis is that the mean AADT for 2008 equals the mean AADT for 2014. Based on our observations on similar traffic data for kentucky in the years 2008 and 2014, my group concludes that our alternate hyptothesis is that the mean AADT for 2008 is less than the mean AADT for 2014.
+H0: u2008 = u2014 H1: u2008 < u2014
+
 2. Data
 
 ```{r}
-bargraph(~urban,data=Mydata)
+bargraph(~urban|year, data=Mydata, type = c("proportion"))
 ```
+There appears to be an slight increase of rural and urban cars in the year 2014 compared to 2008. In both years there are more rural cars than ubran cars.
 
 ```{r}
 histogram(~AADT|year, data=Mydata)
 ```
+The shapes of both histograms appear to share the same shape,center and spread. The outliers of both histograms are in slightly different positions.
 
 ```{r}
 bwplot(year~AADT, data=Mydata)
 ```
+Both boxplots have similar spreads, while the outliers are more spread out.
 
 ```{r}
 favstats(AADT~year,data=Mydata)
@@ -38,25 +47,14 @@ H0: p1 = p2 H1: p1 < p2
 ```{r}
 t.test(AADT~year,alt = 'less',data=Mydata)
 ```
+Since the P-Value is .6142, we cannot reject the null hyptothesis.
 
 4. Conclusion
 
 ```{r}
 t.test(AADT~year, alt = 'two.sided', data = Mydata)
 ```
+The 95% confidence interval for the difference of means in AADT from 2008 and 2014 is 463.617 (-2,682.808 – 3,610.041).
+On average, routes in 2008 saw a higher AADT of 463.617. With 95% confidence, routes in 2008 could have had up to 2,682.808 less AADT or 3,610.041 more AADT. Since 0 is in the CI, there’s a reasonable possibility that a route had the same AADT in both 2008 and 2014.
+
 5. References
-
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
