@@ -1,0 +1,62 @@
+---
+title: "project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+Mydata = read.csv("combined.sample_17.csv")
+```
+
+
+1. Introduction
+
+2. Data
+
+```{r}
+bargraph(~urban,data=Mydata)
+```
+
+```{r}
+histogram(~AADT|year, data=Mydata)
+```
+
+```{r}
+bwplot(year~AADT, data=Mydata)
+```
+
+```{r}
+favstats(AADT~year,data=Mydata)
+```
+
+3. Methods
+
+H0: p1 = p2 H1: p1 < p2
+```{r}
+t.test(AADT~year,alt = 'less',data=Mydata)
+```
+
+4. Conclusion
+
+```{r}
+t.test(AADT~year, alt = 'two.sided', data = Mydata)
+```
+5. References
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
