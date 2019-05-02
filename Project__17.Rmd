@@ -12,13 +12,7 @@ Mydata = read.csv("combined.sample_17.csv")
 
 1. Introduction
 
-We will take our null hypothesis as being that the mean AADT in 2008 is equal to the mean AADT in 2014.
-H0:U2008=U_2014
-Using data from the Kentucky State Police Traffic Facts for years 2008 and 2014, our alternative hypothesis is that the mean AADT in 2008 is less than the mean AADT in 2014.
-H1:U2008 < U2014
-
-The Null Hypotheis is that the mean AADT for 2008 equals the mean AADT for 2014. Based on our observations on similar traffic data for kentucky in the years 2008 and 2014, my group concludes that our alternate hyptothesis is that the mean AADT for 2008 is less than the mean AADT for 2014.
-H0: u2008 = u2014 H1: u2008 < u2014
+Traffic data is useful when studying trends in driving within a region. Examining the amount of traffic a road sees can help determine whether a road may need to be expanded or new roads created to alleviate a buildup of traffic in one area or another. Studying how the amount of traffic changes over time, allows one to predict how it might change in the future, and plan ahead to ensure that roadways are capable of supporting the number of drivers that traverse them without buildup or jams. In this project, we looked at traffic data from 2008 and 2014 for a number of highways and interstates in the state of Kentucky, specifically the Annual Average Daily Traffic (AADT) of these streets. AADT is the average amount of traffic on a given road in a single day for any given year. It is a simple measurement to describe how busy a road will be. There is high variability in the AADT of the many different roads, especially between those in rural and urban regions. However, we chose to take as our variables the averages over all the roads within the data set within the years 2008 and 2014, to examine whether there was any difference in the overall amount of traffic within the state of Kentucky between those two years.
 
 2. Data
 
@@ -42,6 +36,14 @@ favstats(AADT~year,data=Mydata)
 ```
 
 3. Methods
+
+We will take our null hypothesis as being that the mean AADT in 2008 is equal to the mean AADT in 2014.
+H0:U2008=U_2014
+Using data from the Kentucky State Police Traffic Facts for years 2008 and 2014, our alternative hypothesis is that the mean AADT in 2008 is less than the mean AADT in 2014.
+H1:U2008 < U2014
+
+The Null Hypotheis is that the mean AADT for 2008 equals the mean AADT for 2014. Based on our observations on similar traffic data for kentucky in the years 2008 and 2014, my group concludes that our alternate hyptothesis is that the mean AADT for 2008 is less than the mean AADT for 2014.
+H0: u2008 = u2014 H1: u2008 < u2014
 
 H0: p1 = p2 H1: p1 < p2
 ```{r}
