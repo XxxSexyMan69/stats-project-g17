@@ -61,3 +61,5 @@ On average, routes in 2008 saw a higher AADT of 463.617. With 95% confidence, ro
 
 From our p-value, we failed to reject the null hypothesis suggesting the mean AADT in 2008 and 2014 was the same. In addition, the 95% confidence interval for the difference of means in AADT from 2008 and 2014 contains 0 and centers around 463.617. So, on average, routes in 2008 saw a higher AADT. With 95% confidence, routes in 2008 could have had up to 2,682.8 less AADT or 3,610 more AADT. Since 0 is in the CI, there’s a reasonable possibility that a route had the same AADT in both 2008 and 2014. Our Cohen’s effect size value of d = 0.4 suggests that our findings could have been observed casually or through study.
 5. References
+  1. Kentucky Traffic Collision Facts 2008
+  2. Kentucky Traffic Collision Facts 2014
